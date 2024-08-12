@@ -1,0 +1,12 @@
+<view class="container">
+  <view class="search-bar" bindtap="navigateToSearch">
+    <input placeholder="搜索" disabled />
+    <image class="search-icon" src="/images/search.png" />
+  </view>
+  <view class="posts">
+    <PostList posts="{{posts}}" />
+  </view>
+</view>
+<view>
+   <image src="/images/add.png" class="add-icon" bind:tap="addcircle"/>
+</view>

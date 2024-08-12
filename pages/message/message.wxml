@@ -1,0 +1,61 @@
+<view class="container">
+  <!-- @我的 和 点赞 -->
+  <view class="menu-item" bindtap="navigateToMentions">
+    <view class="item-container">
+      <image class="menu-icon" src="/images/mention.png" />
+      <text style="margin-left: 15rpx;">新增关注</text>
+    </view>
+    <view  class="goto-container">
+      <image src="/images/goto.png" class="goto-icon"/>
+    </view>
+  </view>
+  <view class="menu-item" bindtap="navigateToLikes">
+    <view class="item-container">
+      <image class="menu-icon" src="/images/like2.png" />
+      <text style="margin-left: 15rpx;">点赞和收藏</text>
+    </view>
+    <view class="goto-container">
+      <image src="/images/goto.png" class="goto-icon"/>
+    </view>
+  </view>
+  <view class="menu-item" bindtap="navigateToComment">
+    <view class="item-container">
+      <image class="menu-icon" src="/images/comment1.png" />
+      <text style="margin-left: 15rpx;">帖子评论</text>
+    </view>
+    <view class="goto-container">
+      <image src="/images/goto.png" class="goto-icon"/>
+    </view>
+  </view>
+
+  <!-- 占位作用 -->
+  <view class="white">
+  </view>
+  <!-- 消息列表 -->
+  <block wx:for="{{messages}}" wx:key="id">
+    <view class="message-item" bindtap="navigateToPostDetail" data-id="{{item.postId}}">
+      <view class="message-header">
+        <image class="avatar" src="{{item.avatar}}" />
+        <view class="red-dot" wx:if="{{item.unread}}"></view>
+      </view>
+      <view class="message-content">
+      <view>
+        <text style="font-size: 14px;font-weight: bold;">{{item.author}}</text>
+      </view>
+      <view>
+        <text style="font-size: 13px; color: rgb(175, 172, 172);">{{item.time}}</text>
+      </view>
+      <view>
+        <text style="font-size: 12px; color: rgb(88, 198, 235);">回复了我的评论</text>
+      </view>
+      <view style="padding-top: 10rpx;">
+        <text style="font-size: 15px;">{{item.content}}</text>
+      </view>
+      </view>
+      <view class="reply-container">
+         <image src="/images/reply.png" class="reply-icon"/>
+         <text>回复</text>
+      </view>
+    </view>
+  </block>
+</view>

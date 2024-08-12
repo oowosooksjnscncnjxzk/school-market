@@ -1,0 +1,32 @@
+<view class="container">
+  <input class="title-input" 
+  placeholder="请输入完整帖子标题 (5-15字)" 
+  maxlength="15" 
+  bindinput="handleTitleInput" />
+
+  <textarea 
+  class="content-input" 
+  placeholder="请输入正文 (最多800字)" 
+  maxlength="800" 
+  bindinput="handleContentInput"></textarea>
+
+  <view class="select-circle" bindtap="selectCircle">
+    <text style="color:#aaa7a7 ;">选择圈子/二手/经验交流/打听求助</text>
+  </view>
+
+  <view class="image-upload">
+    <block wx:for="{{images}}" wx:key="*this">
+      <view class="image-wrapper">
+        <image src="{{item}}" class="image-preview" />
+        <image src="/images/delete.png" class="delete-icon" data-index="{{index}}" bindtap="deleteImage" />
+      </view>
+    </block>
+    <image wx:if="{{images.length < 6}}" src="/images/addimg.png" class="add-image" bindtap="chooseImage" />
+  </view>
+
+  <view class="bottom">
+    <image src="/images/img.png" bindtap="chooseImage" class="icon"/>
+    <button class="publish-btn" bindtap="publishPost" disabled="{{!canPublish}}">发布</button>
+  </view>
+  
+</view>

@@ -1,0 +1,68 @@
+<view class="container">
+  <!-- 帖子内容 -->
+  <view class="post">
+    <view style="display: flex;align-items: center;">
+      <image class="avatar" src="{{post.author_avatar}}"/>
+      <text class="author">{{post.author_nickname}}</text>
+    </view>
+    <view style="display: flex;flex-direction: column;">
+      <text class="title">{{post.title}}</text>
+      <text class="content">{{post.content}}</text>
+    </view>
+
+    <view class="post-images">
+     <block wx:for="{{post.post_images}}" wx:key="*this">
+       <image class="post-image" src="{{item}}" mode="aspectFill" bindtap="previewImage" data-src="{{item}}"/>
+      </block>
+    </view>
+
+    <view style="display: flex;align-items: center;padding-top:1rpx;">
+      <text class="circle_name">{{post.circle_name}}</text>
+      <text class="time">{{post.created_at}}</text>
+    </view>
+
+    <view class="post-footer">
+      <image class="post-icon" src="/images/like.png" />
+      <image class="post-icon" src="/images/comment.png" />
+      <image class="post-icon" src="/images/favorite.png" />
+    </view>
+  </view>
+  <!-- 评论部分 -->
+  <view class="comments">
+    <block wx:for="{{comments}}" wx:key="comment.id">
+      <view class="comment">
+        <view class="comment-content">
+          <view style="display: flex;align-items: center;">
+            <image src="{{item.comment.user_avator}}" class="comment-avator"/>
+            <text class="comment-author">{{item.comment.user_nickname}}</text>
+            <image src="/images/like.png" class="like-icon"/>
+          </view>
+          <view style="display: flex;flex-direction: column;margin-top: 20rpx;padding-left: 70rpx;">
+            <text class="comment-text">{{item.comment.content}}</text>
+            <text class="comment-time">{{item.comment.time}}</text>
+          </view>
+          <block wx:for="{{item.subcomment}}" wx:key="subcomment.reply_id">
+            <view class="subcomment">
+              <image src="{{item.user_avator}}" class="subcomment-avator"/>
+              <text class="subcomment-author">{{item.user_nickname}}</text>
+              <text class="subcomment-text">{{item.content}}</text>
+            </view>
+          </block>
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <!-- 底部操作栏 -->
+  <view class="bottom-bar">
+    <button bindtap="navigateToHome">首页</button>
+    <button bindtap="showCommentInput">评论</button>
+  </view>
+
+  <!-- 评论输入框 -->
+  <view wx:if="{{showCommentBox}}" class="comment-input">
+    <textarea maxlength="300" placeholder="友善评论，传递温暖" bindinput="onCommentInput"></textarea>
+    <button bindtap="submitComment">确定</button>
+    <button bindtap="cancelComment">取消</button>
+  </view>
+</view>

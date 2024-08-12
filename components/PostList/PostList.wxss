@@ -1,0 +1,109 @@
+.post-list {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 60px;
+}
+
+.post-item {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 315.33px;
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.post-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  margin-right: 10px;
+}
+
+.post-info {
+  flex: 1;
+}
+
+.post-author {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.post-type {
+  font-size: 12px;
+  color: #888;
+
+}
+
+.post-date {
+  font-size: 12px;
+  color: #888;
+  padding-left: 25rpx;
+}
+
+.post-actions {
+  display: flex;
+  align-items: center;
+}
+
+.post-follow, .post-report {
+  margin-left: 10px;
+  font-size: 12px;
+  color: #333;
+}
+
+.post-title {
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.post-images {
+  display: flex;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.post-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+
+.post-content {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.post-footer {
+  display: flex;
+  justify-content: space-around;
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+}
+
+.post-icon {
+  width: 22px;
+  height: 22px;
+  padding: 5rpx;
+}
+
+.circle-icon{
+  width: 32rpx;
+  height: 32rpx;
+  border-radius: 8rpx;
+  margin-right: 15rpx;
+}
+
+.circle-container{
+  display: flex;
+  align-items: center;
+}
+

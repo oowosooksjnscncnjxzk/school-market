@@ -1,0 +1,15 @@
+<view class="container">
+  <view class="nav-bar">
+    <block wx:for="{{navItems}}" wx:key="id">
+      <view class="nav-item" data-url="{{item.url}}" bindtap="navigate">
+        <image class="nav-icon" src="{{item.icon}}" />
+        <text class="nav-text">{{item.label}}</text>
+      </view>
+    </block>
+  </view>
+  <view class="search-bar" bindtap="navigateToSearch">
+    <input placeholder="搜索" disabled />
+    <image class="search-icon" src="/images/search.png" />
+  </view>
+  <PostList posts="{{posts}}" />
+</view>

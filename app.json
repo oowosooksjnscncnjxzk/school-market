@@ -1,0 +1,47 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/circle/circle",
+    "pages/publish/publish",
+    "pages/message/message",
+    "pages/personal/personal",
+    "pages/postDetail/postDetail",
+    "pages/search/search",
+    "pages/map/map",
+    "pages/category/category",
+    "pages/editProfile/editProfile",
+    "pages/addcircle/addcircle",
+    "pages/mentions/mentions",
+    "pages/likes/likes",
+    "pages/comment/comment"
+
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "校园集市",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "custom": true,
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/circle/circle",
+        "text": "圈子"
+      },
+     
+      {
+        "pagePath": "pages/message/message",
+        "text": "消息"
+      },
+      {
+        "pagePath": "pages/personal/personal",
+        "text": "个人"
+      }
+    ]
+  }
+}

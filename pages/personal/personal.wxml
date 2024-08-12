@@ -1,0 +1,54 @@
+<view class="container">
+  <view class="header">
+    <view class="user-info">
+    <view class="user-details">
+      <view>
+        <text class="username">{{userInfo.username}}</text>
+      </view>
+      <view class="second">
+        <image class="region" src="/images/region.png" />
+        <text class="user-detail">家乡: {{userInfo.hometown}}</text>
+      </view>
+      <view class="third">
+        <text class="user-detail">学校: {{userInfo.school}}</text>
+        <text class="user-detail">性别: {{userInfo.gender}}</text>
+      </view>
+      <view class="forth">
+        <text class="user-detail">生日: {{userInfo.birthdate}}</text>
+        <text class="user-detail">身高: {{userInfo.height}}</text>
+      </view>
+      <view class="fith">
+        <text class="signature">签名: {{userInfo.signature}}</text>
+      </view>
+    </view>
+    <view class="avatar-container">
+      <image class="avatar" src="/images/avatar1.png" />
+      <text class="edit-profile" bindtap="navigateToEditProfile">编辑个人信息></text>
+    </view>
+  </view>
+  </view>
+  <view class="user-stats">
+    <view class="stat">
+      <text class="stat-number">{{userInfo.followers}}</text>
+      <text class="stat-label">粉丝</text>
+    </view>
+    <view class="stat">
+      <text class="stat-number">{{userInfo.following}}</text>
+      <text class="stat-label">关注</text>
+    </view>
+    <view class="stat">
+      <text class="stat-number">{{userInfo.likes}}</text>
+      <text class="stat-label">获赞</text>
+    </view>
+  </view>
+  <view class="tabs">
+    <block wx:for="{{tabs}}" wx:key="*this">
+      <view class="tab" data-index="{{index}}" bindtap="handleTabChange">
+        <text class="{{activeTab === index ? 'active' : ''}}">{{item}}</text>
+      </view>
+    </block>
+  </view>
+  <view class="posts">
+    <PostList posts="{{posts}}" />
+  </view>
+</view>
